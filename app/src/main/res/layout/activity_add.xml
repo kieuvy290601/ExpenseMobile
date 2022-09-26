@@ -109,14 +109,15 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/yes"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:text="Yes"
             android:textSize="36px"/>
+            android:onClick="RadioButtonClicked" >
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/no"
             android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:text="No"
@@ -135,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/add_Desc"
         android:layout_width="379dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
@@ -158,5 +159,5 @@
         android:layout_marginTop="24dp"
         android:text="Save"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_Desc" />
 </androidx.constraintlayout.widget.ConstraintLayout>

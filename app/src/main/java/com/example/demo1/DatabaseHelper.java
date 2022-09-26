@@ -1,8 +1,10 @@
 package com.example.demo1;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -17,10 +19,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "ExpenseApp";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NAME = "name";
-    private static final String COLUMN_DESTINATION = "destination";
+    private static final String COLUMN_DESTINATION = "des";
     private static final String COLUMN_DATE = "date";
-    private static final String COLUMN_DESC = "desc";
-    private static final String COLUMN_RISK = "risk";
+    private static final String COLUMN_DESC = "description";
+    public static final String COLUMN_RISK = "risk";
 
     public DatabaseHelper(@Nullable Context context)
     {
@@ -35,14 +37,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_NAME + " TEXT, " +
                 COLUMN_DESTINATION + " TEXT, " +
                 COLUMN_DATE + " TEXT, "  +
-                COLUMN_DESC + "TEXT, " +
-                COLUMN_RISK + " TEXT);";
+                COLUMN_RISK + " TEXT, " +
+                COLUMN_DESC + " TEXT)";
         db.execSQL(query);
     }
 
+
+
+    public boolean addTrip(String name, String des, String date, String risk, String description){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentSave = new ContentValues();
+
+        contentSave.put(COLUMN_NAME, name);
+        contentSave.put(COLUMN_DESTINATION, des);
+        contentSave.put(COLUMN_DATE, date);
+        contentSave.put(COLUMN_RISK, risk);
+        contentSave.put(COLUMN_DESC, description);
+        long result = db.insert(TABLE_NAME,null, contentSave);
+        if(result == -1) {
+            return false;
+        }
+        return  true;
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
 }
