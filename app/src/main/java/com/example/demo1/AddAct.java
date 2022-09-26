@@ -58,7 +58,7 @@ public class AddAct extends AppCompatActivity {
                         add_Desc.getText().toString().trim());
 
                 if(result) {
-                    Toast.makeText(AddAct.this, "thhanh cong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddAct.this, "thanh cong", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(AddAct.this, "failed", Toast.LENGTH_SHORT).show();
                 }
