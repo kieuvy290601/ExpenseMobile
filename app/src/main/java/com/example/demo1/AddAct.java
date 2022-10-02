@@ -51,16 +51,16 @@ public class AddAct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (error()){
-                    Intent intent = new Intent( AddAct.this, MainActivity.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent( AddAct.this, MainActivity.class);
+                    startActivity(intent);*/
                     getInputs();
 
 
                     DatabaseHelper my_database = new DatabaseHelper(AddAct.this);
                     /*ContentValues contentSave = new ContentValues();*/
-                    int selectedId = radioGroup.getCheckedRadioButtonId();
-                    radioSelect = findViewById(selectedId);
-                    String radioText = radioSelect.getText().toString();
+                    int selectedId = radioGroup.getCheckedRadioButtonId(); // này là check xem cái nào được click dô
+                    radioSelect = findViewById(selectedId); // ni là lấy id của cái radio được chọn
+                    String radioText = radioSelect.getText().toString(); // ni là lấy cái text, là cái yes or no đ
 
 
                     boolean result = my_database.addTrip(add_Name.getText().toString().trim(),
@@ -76,25 +76,6 @@ public class AddAct extends AppCompatActivity {
                     }
 
                 };
-
-                /*DatabaseHelper my_database = new DatabaseHelper(AddAct.this);
-                *//*ContentValues contentSave = new ContentValues();*//*
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioSelect = findViewById(selectedId);
-                String radioText = radioSelect.getText().toString();
-
-
-                boolean result = my_database.addTrip(add_Name.getText().toString().trim(),
-                        add_Des.getText().toString().trim(),
-                        add_Date.getText().toString().trim(),
-                        radioText,
-                        add_Desc.getText().toString().trim());
-
-                if(result) {
-                    Toast.makeText(AddAct.this, "thanh cong", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(AddAct.this, "failed", Toast.LENGTH_SHORT).show();
-                }*/
 
             }
             private  boolean error() {
@@ -154,7 +135,8 @@ public class AddAct extends AppCompatActivity {
         ).setNeutralButton("Back", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                Intent in = new Intent(AddAct.this, MainActivity.class);
+                startActivity(in);
             }
         }).show();
     }
