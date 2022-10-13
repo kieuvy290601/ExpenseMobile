@@ -58,9 +58,9 @@ public class AddAct extends AppCompatActivity {
 
                     DatabaseHelper my_database = new DatabaseHelper(AddAct.this);
                     /*ContentValues contentSave = new ContentValues();*/
-                    int selectedId = radioGroup.getCheckedRadioButtonId(); // này là check xem cái nào được click dô
-                    radioSelect = findViewById(selectedId); // ni là lấy id của cái radio được chọn
-                    String radioText = radioSelect.getText().toString(); // ni là lấy cái text, là cái yes or no đ
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    radioSelect = findViewById(selectedId);
+                    String radioText = radioSelect.getText().toString();
 
 
                     boolean result = my_database.addTrip(add_Name.getText().toString().trim(),

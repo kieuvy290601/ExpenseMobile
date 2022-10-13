@@ -25,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_DESC = "description";
     public static final String COLUMN_RISK = "risk";
 
-    public DatabaseHelper(@Nullable Context context)
+     DatabaseHelper(@Nullable Context context)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -70,6 +70,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    public boolean updateData(String row_id, String name, String des, String date,String risk, String description){
+         SQLiteDatabase db = this.getWritableDatabase();
+         ContentValues contentSave = new ContentValues();
+
+         contentSave.put(COLUMN_NAME, name);
+         contentSave.put(COLUMN_DESTINATION, des);
+         contentSave.put(COLUMN_DATE, date);
+         contentSave.put(COLUMN_RISK, risk);
+         contentSave.put(COLUMN_DESC, description);
+
+         long result = db.update(TABLE_NAME, contentSave, "id=?", new String[] {row_id});
+            if(result == -1) {
+                return false;
+            }
+            return  true;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
