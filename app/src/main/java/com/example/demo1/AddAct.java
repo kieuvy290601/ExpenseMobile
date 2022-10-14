@@ -24,11 +24,12 @@ import java.time.LocalDate;
 
 public class AddAct extends AppCompatActivity {
 
-    EditText add_Name, add_Des, add_Date, add_Desc;
+    EditText add_Name, add_Des, add_Desc;
     Button button;
     RadioGroup radioGroup;
     RadioButton yes, no;
     RadioButton radioSelect;
+    TextView add_Date;
 
 
 
@@ -106,7 +107,7 @@ public class AddAct extends AppCompatActivity {
     private void getInputs(){
         EditText add_Name = findViewById(R.id.add_Name);
         EditText add_Des = findViewById(R.id.add_Des);
-        EditText add_Date = findViewById(R.id.add_Date);
+        TextView add_Date = findViewById(R.id.add_Date);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioSelect = findViewById(selectedId);
         EditText add_Desc = findViewById(R.id.add_Desc);

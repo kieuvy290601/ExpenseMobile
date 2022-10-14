@@ -88,6 +88,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return  true;
     }
 
+    public boolean deleteARow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
+        if(result == -1) {
+            return false;
+        }
+        return  true;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);

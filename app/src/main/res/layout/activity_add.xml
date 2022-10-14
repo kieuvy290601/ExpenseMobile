@@ -72,12 +72,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Des" />
 
-    <EditText
+    <TextView
         android:id="@+id/add_Date"
-        android:layout_width="369dp"
-        android:layout_height="38dp"
+        android:layout_width="372dp"
+        android:layout_height="26dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Double click to choose a date"
         android:inputType="textPersonName"

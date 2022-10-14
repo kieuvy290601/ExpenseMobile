@@ -21,7 +21,7 @@ public class UpdateAct extends AppCompatActivity {
     EditText add_Name, add_Des,  add_Desc;
     RadioGroup radioGroup;
     RadioButton radioSelect;
-    Button update_Button, delete_button;
+    Button update_Button, delete_Button;
     TextView add_Date;
 
     String id, name, des, date, risk, description;
@@ -38,7 +38,7 @@ public class UpdateAct extends AppCompatActivity {
         add_Desc = findViewById(R.id.update_Desc);
 
         update_Button = findViewById(R.id.update_Button);
-        //delete_button = findViewById(R.id.delete_button);
+        delete_Button = findViewById(R.id.delete_Button);
         getIntentData();
 
         update_Button.setOnClickListener(new View.OnClickListener() {
@@ -63,9 +63,24 @@ public class UpdateAct extends AppCompatActivity {
                 if(result) {
                     Toast.makeText(UpdateAct.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(UpdateAct.this, "Failed Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateAct.this, "Failed Update", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+        delete_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( UpdateAct.this, MainActivity.class);
+                startActivity(intent);
+                DatabaseHelper myDB = new DatabaseHelper(UpdateAct.this);
+                myDB.deleteARow(id);
+                boolean result =  myDB.updateData(id, name, des,date,risk, description);
+                if(result) {
+                    Toast.makeText(UpdateAct.this, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(UpdateAct.this, "Failed Delete", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
