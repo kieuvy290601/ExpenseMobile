@@ -96,6 +96,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return  true;
     }
+    void deleteAllRow(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
