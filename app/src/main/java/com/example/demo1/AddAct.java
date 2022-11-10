@@ -113,8 +113,6 @@ public class AddAct extends AppCompatActivity {
         EditText add_Desc = findViewById(R.id.add_Desc);
 
 
-
-
         String strName = add_Name.getText().toString();
         String strDes = add_Des.getText().toString();
         String strDate = add_Date.getText().toString();
@@ -122,18 +120,17 @@ public class AddAct extends AppCompatActivity {
         String strDesc = add_Desc.getText().toString();
 
 
-
         displayNextAlert(strName, strDes, strDate, radioText, strDesc);
     };
 
     private void displayNextAlert(String strName, String strDes, String strDate, String radioText, String strDesc) {
         new AlertDialog.Builder(this).setTitle("Details entered").setMessage("Details entered: " +
-                "\n" + strName +
-                "\n" + strDes +
-                "\n" + strDate +
-                "\n" + radioText +
-                "\n" + strDesc
-        ).setNeutralButton("Back", new DialogInterface.OnClickListener() {
+                "\n Name: " + strName +
+                "\n Destination: " + strDes +
+                "\n Date: " + strDate +
+                "\n Risk: " + radioText +
+                "\n Description: " + strDesc
+        ).setPositiveButton("Close", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent in = new Intent(AddAct.this, MainActivity.class);
