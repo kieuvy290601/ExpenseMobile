@@ -79,7 +79,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Double click to choose a date"
+        android:hint="Click here to choose a date"
         android:inputType="textPersonName"
         android:onClick="showDatePickerDialog"
         android:text=""

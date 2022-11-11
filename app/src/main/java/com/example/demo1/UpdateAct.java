@@ -21,7 +21,7 @@ public class UpdateAct extends AppCompatActivity {
     EditText add_Name, add_Des,  add_Desc;
     RadioGroup radioGroup;
     RadioButton radioSelect;
-    Button update_Button, delete_Button;
+    Button update_Button, delete_Button, see_Expense;
     TextView add_Date;
 
     String id, name, des, date, risk, description;
@@ -39,6 +39,7 @@ public class UpdateAct extends AppCompatActivity {
 
         update_Button = findViewById(R.id.update_Button);
         delete_Button = findViewById(R.id.delete_Button);
+        see_Expense = findViewById(R.id.see_Expense);
         getIntentData();
 
         update_Button.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +69,16 @@ public class UpdateAct extends AppCompatActivity {
 
             }
         });
+
+        see_Expense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( UpdateAct.this, AddExpense.class);
+                intent.putExtra("tripID", id);
+                startActivity(intent);
+            }
+        });
+
         delete_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

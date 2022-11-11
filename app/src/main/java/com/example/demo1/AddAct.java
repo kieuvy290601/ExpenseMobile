@@ -96,10 +96,10 @@ public class AddAct extends AppCompatActivity {
                     Toast.makeText(AddAct.this, "Please select the risk", Toast.LENGTH_SHORT).show();
                     return false;
                 }
-                else if (add_Desc.getText().toString().length()==0){
+                /*else if (add_Desc.getText().toString().length()==0){
                     Toast.makeText(AddAct.this, "Please fill description", Toast.LENGTH_SHORT).show();
                     return false;
-                }
+                }*/
                 return  true;
             }
         });
@@ -148,7 +148,6 @@ public class AddAct extends AppCompatActivity {
         TextView textDate = (TextView) findViewById(R.id.add_Date);
         textDate.setText(date.toString());
     }
-
 
 }
 

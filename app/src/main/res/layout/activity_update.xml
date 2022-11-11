@@ -12,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="Name"
         android:textSize="42px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,6 +43,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Destination"
+        android:textStyle="bold"
         android:textSize="42px"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Name" />
@@ -50,7 +52,7 @@
         android:id="@+id/update_Des"
         android:layout_width="376dp"
         android:layout_height="46dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
@@ -69,6 +71,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Date"
+        android:textStyle="bold"
         android:textSize="42px"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Des" />
@@ -82,6 +85,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:text="Require Risks Assessment"
+        android:textStyle="bold"
         android:textSize="42px"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Date" />
@@ -119,6 +123,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Description"
+        android:textStyle="bold"
         android:textSize="42px"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_radioG" />
@@ -141,9 +146,9 @@
 
     <Button
         android:id="@+id/update_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:text="Update Data"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,16 +156,23 @@
 
     <Button
         android:id="@+id/delete_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="374dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:text="Delete Data"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="#FF0000"
+        android:text="Delete Data"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_Desc" />
+
+    <Button
+        android:id="@+id/see_Expense"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:text="See Expenses"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Desc" />
 
     <TextView
