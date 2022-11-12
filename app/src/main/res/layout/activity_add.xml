@@ -10,16 +10,17 @@
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="36dp"
         android:text="Name"
-        android:textSize="42px"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/add_Name"
-        android:layout_width="377dp"
+        android:layout_width="350dp"
         android:layout_height="41dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="8dp"
@@ -38,18 +39,19 @@
         android:id="@+id/textDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:text="Destination"
-        android:textSize="42px"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Name" />
 
     <EditText
         android:id="@+id/add_Des"
-        android:layout_width="376dp"
+        android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
@@ -65,18 +67,19 @@
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:text="Date"
-        android:textSize="42px"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Des" />
 
     <TextView
         android:id="@+id/add_Date"
-        android:layout_width="372dp"
+        android:layout_width="350dp"
         android:layout_height="26dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Click here to choose a date"
@@ -91,10 +94,11 @@
         android:id="@+id/textRisk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:text="Require Risks Assessment"
-        android:textSize="42px"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Date" />
 
@@ -102,42 +106,43 @@
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRisk"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/textRisk">
 
         <RadioButton
             android:id="@+id/yes"
-            android:layout_width="115dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Yes"
-            android:textSize="36px"/>
-            android:onClick="RadioButtonClicked" >
+            android:textSize="36px" />
+        android:onClick="RadioButtonClicked" >
 
         <RadioButton
             android:id="@+id/no"
             android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:text="No"
-            android:textSize="36px"/>
+            android:textSize="36px" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:text="Description"
-        android:textSize="42px"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
         android:id="@+id/add_Desc"
-        android:layout_width="379dp"
+        android:layout_width="350dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -153,11 +158,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
         android:text="Save"
+        android:textSize="56px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Desc" />
 

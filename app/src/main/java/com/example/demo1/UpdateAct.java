@@ -73,7 +73,7 @@ public class UpdateAct extends AppCompatActivity {
         see_Expense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( UpdateAct.this, AddExpense.class);
+                Intent intent = new Intent( UpdateAct.this, MainExpenseAct.class);
                 intent.putExtra("tripID", id);
                 startActivity(intent);
             }

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         add_Btn = findViewById(R.id.add_Btn);
         add_Btn.setOnClickListener(new View.OnClickListener()
         {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddAct.class);
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         risk = new ArrayList<>();
         description = new ArrayList<>();
 
-        SaveDataInArray();
+        GetDataInArray();
 
         VAdapter = new VAdapter(MainActivity.this,id,name,des,date,risk,description);
         recyclerView.setAdapter(VAdapter);
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void SaveDataInArray(){
+    void GetDataInArray(){
         Cursor cursor = dataHelper.readData();
         if(cursor.getCount() == 0){
             /*empty_imageview.setVisibility(View.VISIBLE);

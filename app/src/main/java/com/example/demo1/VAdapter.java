@@ -41,12 +41,12 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.myViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        holder.expense_id.setText(String.valueOf(id.get(position)));
-        holder.expense_name.setText(String.valueOf(name.get(position)));
-        holder.expense_des.setText(String.valueOf(des.get(position)));
-        holder.expense_date.setText(String.valueOf(date.get(position)));
-        holder.expense_risk.setText(String.valueOf(risk.get(position)));
-        holder.expense_desc.setText(String.valueOf(description.get(position)));
+        holder.trip_id.setText(String.valueOf(id.get(position)));
+        holder.trip_name.setText(String.valueOf(name.get(position)));
+        holder.trip_des.setText(String.valueOf(des.get(position)));
+        holder.trip_date.setText(String.valueOf(date.get(position)));
+        holder.trip_risk.setText(String.valueOf(risk.get(position)));
+        holder.trip_desc.setText(String.valueOf(description.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,17 +80,17 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.myViewHolder> {
 
     public class myViewHolder extends RecyclerView.ViewHolder {
 
-        TextView expense_id, expense_name, expense_des, expense_date, expense_risk, expense_desc;
+        TextView trip_id, trip_name, trip_des, trip_date, trip_risk, trip_desc;
         LinearLayout mainLayout;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            expense_id = itemView.findViewById(R.id.expense_id);
-            expense_name = itemView.findViewById(R.id.expense_name);
-            expense_des = itemView.findViewById(R.id.expense_des);
-            expense_date = itemView.findViewById(R.id.expense_date);
-            expense_risk = itemView.findViewById(R.id.expense_risk);
-            expense_desc = itemView.findViewById(R.id.expense_desc);
+            trip_id = itemView.findViewById(R.id.trip_id);
+            trip_name = itemView.findViewById(R.id.trip_name);
+            trip_des = itemView.findViewById(R.id.trip_des);
+            trip_date = itemView.findViewById(R.id.trip_date);
+            trip_risk = itemView.findViewById(R.id.trip_risk);
+            trip_desc = itemView.findViewById(R.id.trip_desc);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }

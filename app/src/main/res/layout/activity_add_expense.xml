@@ -10,47 +10,49 @@
         android:id="@+id/textType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
         android:text="Type"
-        android:textSize="24dp"
+        android:textSize="56px"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="360dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textType" />
+        app:layout_constraintTop_toBottomOf="@+id/textType"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Amount"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/blue"
+        android:text="Amount"
+        android:textSize="56px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="360dp"
+        android:id="@+id/add_Amount"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Ex: 100,000 VND"
-        android:textSize="20dp"
         android:inputType="textPersonName"
         android:text=""
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAmount" />
 
@@ -58,34 +60,36 @@
         android:id="@+id/textTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:text="Time of Expense"
+        android:textSize="56px"
         android:textStyle="bold"
-        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/add_Amount" />
 
     <TextView
         android:id="@+id/add_Time"
-        android:layout_width="360dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
         android:hint="Click here to choose a date"
+        android:inputType="textPersonName"
         android:onClick="expenseDatePickerDialog"
         android:textSize="20dp"
-        android:inputType="textPersonName"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTime" />
 
     <Button
         android:id="@+id/addEx_Button"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:text="Add Expense"
+        android:textSize="50px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Time" />
 </androidx.constraintlayout.widget.ConstraintLayout>

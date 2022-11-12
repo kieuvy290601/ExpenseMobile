@@ -79,11 +79,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  true;
     }
 
-    public boolean addExpense(String exId, String type, String amount, String time){
+    public boolean addExpense(String trId, String type, String amount, String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentSave = new ContentValues();
 
-        contentSave.put(COLUMN_ExID, exId);
+        contentSave.put(COLUMN_TrID, trId);
         contentSave.put(COLUMN_TYPE, type);
         contentSave.put(COLUMN_AMOUNT, amount);
         contentSave.put(COLUMN_TIME, time);
@@ -96,7 +96,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     Cursor readData(){
         String query = "SELECT * FROM " + TRIP_TABLE;
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    Cursor readExpenseData(String trID){
+        String query = "SELECT * FROM " + EXPENSE_TABLE + " WHERE trId" + " = " + trID;;
+        SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = null;
         if(db != null){

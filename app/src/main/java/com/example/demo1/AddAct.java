@@ -124,7 +124,7 @@ public class AddAct extends AppCompatActivity {
     };
 
     private void displayNextAlert(String strName, String strDes, String strDate, String radioText, String strDesc) {
-        new AlertDialog.Builder(this).setTitle("Details entered").setMessage("Details entered: " +
+        new AlertDialog.Builder(this).setTitle("Trip Details entered").setMessage("Details entered: " +
                 "\n Name: " + strName +
                 "\n Destination: " + strDes +
                 "\n Date: " + strDate +

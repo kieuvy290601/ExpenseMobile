@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/drawable/add_ic.xml" value="0.2115" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/drawable/spinner.xml" value="0.1965" />
         <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_add.xml" value="0.25" />
-        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_add_expense.xml" value="0.1" />
-        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_main.xml" value="0.14" />
-        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_update.xml" value="0.1623931623931624" />
-        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/data_row.xml" value="0.22" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_add_expense.xml" value="0.22" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_main_expense.xml" value="0.22" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/activity_update.xml" value="0.14" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/data_row.xml" value="0.1" />
+        <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/layout/data_row_expense.xml" value="0.25" />
         <entry key="..\:/Workspace/MobileApp/Demo1/app/src/main/res/menu/imenu.xml" value="0.20416666666666666" />
       </map>
     </option>
