@@ -66,7 +66,6 @@ public class UpdateAct extends AppCompatActivity {
                 }else{
                     Toast.makeText(UpdateAct.this, "Failed Update", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -86,6 +85,7 @@ public class UpdateAct extends AppCompatActivity {
                 startActivity(intent);
                 DatabaseHelper myDB = new DatabaseHelper(UpdateAct.this);
                 myDB.deleteARow(id);
+                myDB.deleteExpenseId(id);
                 boolean result =  myDB.updateData(id, name, des,date,risk, description);
                 if(result) {
                     Toast.makeText(UpdateAct.this, "Deleted Successfully", Toast.LENGTH_SHORT).show();

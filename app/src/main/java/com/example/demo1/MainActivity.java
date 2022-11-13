@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         risk = new ArrayList<>();
         description = new ArrayList<>();
 
-        GetDataInArray();
+        GetTripData();
 
         VAdapter = new VAdapter(MainActivity.this,id,name,des,date,risk,description);
         recyclerView.setAdapter(VAdapter);
@@ -63,11 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void GetDataInArray(){
+    void GetTripData(){
         Cursor cursor = dataHelper.readData();
         if(cursor.getCount() == 0){
-            /*empty_imageview.setVisibility(View.VISIBLE);
-            no_data.setVisibility(View.VISIBLE);*/
+            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
         }else{
             while (cursor.moveToNext()){
                 id.add(cursor.getString(0));

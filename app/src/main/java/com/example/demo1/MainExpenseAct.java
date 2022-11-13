@@ -51,7 +51,7 @@ public class MainExpenseAct extends AppCompatActivity {
         amount = new ArrayList<>();
         time = new ArrayList<>();
 
-        GetData();
+        GetExpenseData();
 
         exAdapter = new ExAdapter(MainExpenseAct.this, _id, trId, type, amount, time) ;
         recyclerExpense.setAdapter(exAdapter);
@@ -59,7 +59,7 @@ public class MainExpenseAct extends AppCompatActivity {
 
     }
 
-    private void GetData() {
+    private void GetExpenseData() {
         String trID = getIntent().getStringExtra("tripId");
         Cursor cursor = dataHelper.readExpenseData(trID);
         if(cursor.getCount() == 0){

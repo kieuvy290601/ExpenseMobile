@@ -135,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean deleteARow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(TRIP_TABLE, "id=?", new String[]{row_id});
+        long result = db.delete(TRIP_TABLE, "id=?" , new String[]{row_id});
         if(result == -1) {
             return false;
         }
@@ -145,6 +145,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TRIP_TABLE);
 
+    }
+    void deleteExpenseId(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + EXPENSE_TABLE +  " WHERE  trId" + " = " + id);
     }
 
     @Override

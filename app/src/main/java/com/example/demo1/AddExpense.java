@@ -34,6 +34,9 @@ public class AddExpense extends AppCompatActivity {
     };
     private Spinner spinner;
 
+    private static final String CHECK_AMOUNT = "[a-zA-Z]";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,12 +126,12 @@ public class AddExpense extends AppCompatActivity {
     }
 
     private  boolean error() {
-        if (spinner.getSelectedItem().toString().isEmpty()){
+        if (spinner.getSelectedItem().toString() == "Choose"){
             Toast.makeText(AddExpense.this, "Please select the expense type", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (add_Amount.getText().toString().length()==0){
-            Toast.makeText(AddExpense.this, "Please fill in the amount field", Toast.LENGTH_SHORT).show();
+        if (add_Amount.getText().toString().isEmpty()){
+            Toast.makeText(AddExpense.this, "Please insert amount", Toast.LENGTH_SHORT).show();
             return false;
         }
         else if (add_Time.getText().toString().length()==0){
