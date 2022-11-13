@@ -44,13 +44,13 @@
 
     <EditText
         android:id="@+id/add_Amount"
-        android:layout_width="350dp"
+        android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Ex: 100,000 VND"
-        android:inputType="textPersonName"
+        android:hint="Ex: 100,000"
+        android:inputType="numberDecimal"
         android:text=""
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,4 +92,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Time" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:text="VND"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/add_Amount"
+        app:layout_constraintTop_toBottomOf="@+id/textAmount" />
 </androidx.constraintlayout.widget.ConstraintLayout>

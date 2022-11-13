@@ -35,9 +35,11 @@ public class MainExpenseAct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainExpenseAct.this, AddExpense.class);
-                String tripId = getIntent().getStringExtra("tripID");
+                String tripId = getIntent().getStringExtra("tripId");
                 intent.putExtra("id", String.valueOf(tripId));
                 startActivity(intent);
+
+
             }
         });
 

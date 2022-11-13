@@ -74,7 +74,7 @@ public class UpdateAct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent( UpdateAct.this, MainExpenseAct.class);
-                intent.putExtra("tripID", id);
+                intent.putExtra("tripId", id);
                 startActivity(intent);
             }
         });

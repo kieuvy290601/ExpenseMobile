@@ -105,8 +105,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    Cursor readExpenseData(String trID){
-        String query = "SELECT * FROM " + EXPENSE_TABLE + " WHERE trId" + " = " + trID;;
+    Cursor readExpenseData(String trId){
+        String query = "SELECT * FROM " + EXPENSE_TABLE + " WHERE trId" + " = " + trId;;
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = null;

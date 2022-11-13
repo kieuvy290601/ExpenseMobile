@@ -41,7 +41,8 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.myViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        holder.trip_id.setText(String.valueOf(id.get(position)));
+        holder.trip_id.setText(String.valueOf(position + 1));
+        //holder.trip_id.setText(String.valueOf(id.get(position)));
         holder.trip_name.setText(String.valueOf(name.get(position)));
         holder.trip_des.setText(String.valueOf(des.get(position)));
         holder.trip_date.setText(String.valueOf(date.get(position)));

@@ -66,11 +66,12 @@ public class AddExpense extends AppCompatActivity {
         addEx_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AddExpense.this, MainExpenseAct.class);
-                i.putExtra("tripId", tripId);
-                startActivity(i);
-                if (error()){
 
+                /*Intent i = new Intent(AddExpense.this, MainExpenseAct.class);
+                i.putExtra("tripId", tripId);
+                startActivity(i);*/
+
+                if (error()){
                     getExpense();
                     DatabaseHelper databaseHelper = new DatabaseHelper(AddExpense.this);
                     boolean result = databaseHelper.addExpense(
@@ -85,6 +86,10 @@ public class AddExpense extends AppCompatActivity {
                     }else{
                         Toast.makeText(AddExpense.this, "Failed", Toast.LENGTH_SHORT).show();
                     }
+
+                    Intent i = new Intent(AddExpense.this, MainExpenseAct.class);
+                    i.putExtra("tripId", tripId);
+                    startActivity(i);
 
                 }
             }

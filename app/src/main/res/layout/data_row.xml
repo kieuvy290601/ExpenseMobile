@@ -5,6 +5,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/layout_border"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
     android:id="@+id/mainLayout">
 
     <androidx.cardview.widget.CardView
