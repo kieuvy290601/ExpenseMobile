@@ -94,15 +94,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  true;
     }
 
-    Cursor readData(){
-        String query = "SELECT * FROM " + TRIP_TABLE;
-        SQLiteDatabase db = this.getWritableDatabase();
+    Cursor readData(String tripSearch){
 
-        Cursor cursor = null;
-        if(db != null){
+        if(tripSearch.length()==0){
+            String query = "SELECT * FROM " + TRIP_TABLE;
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            Cursor cursor = null;
+            if(db != null){
+                cursor = db.rawQuery(query, null);
+            }
+            return cursor;
+        } else {
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = null;
+            String query = "SELECT * FROM " + TRIP_TABLE + " WHERE " + COLUMN_NAME + " LIKE '%" + tripSearch + "%'";
             cursor = db.rawQuery(query, null);
+            return cursor;
         }
-        return cursor;
+
     }
 
     Cursor readExpenseData(String trId){

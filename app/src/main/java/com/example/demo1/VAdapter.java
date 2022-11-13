@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,11 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VAdapter extends RecyclerView.Adapter<VAdapter.myViewHolder> {
 
     private Context context;
     private ArrayList id, name, des, date, risk, description;
+
 
     VAdapter(Context context, ArrayList id, ArrayList name, ArrayList des, ArrayList date, ArrayList risk, ArrayList description){
         this.context = context;

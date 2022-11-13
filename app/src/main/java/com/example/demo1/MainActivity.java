@@ -14,17 +14,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_Btn;
+    EditText searchTxt;
+    Button searchBtn;
 
     DatabaseHelper dataHelper;
     ArrayList<String> id, name, des, date, risk, description;
@@ -46,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        searchTxt = findViewById(R.id.searchTxt);
+        searchBtn = findViewById(R.id.searchBtn);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tripSearch = searchTxt.getText().toString();
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                intent.putExtra("tripSearch", tripSearch);
+                startActivity(intent);
+            }
+        });
 
         dataHelper = new DatabaseHelper(MainActivity.this);
         id = new ArrayList<>();
@@ -55,7 +69,16 @@ public class MainActivity extends AppCompatActivity {
         risk = new ArrayList<>();
         description = new ArrayList<>();
 
-        GetTripData();
+        searchTxt.setText(getIntent().getStringExtra("tripSearch"));
+        if (searchTxt.length() == 0) {
+            String tripSearch = searchTxt.getText().toString();
+            GetTripData(tripSearch);
+        } else if (searchTxt.length() > 0) {
+            String searchTrip = searchTxt.getText().toString();
+            GetTripData(searchTrip);
+        }
+
+
 
         VAdapter = new VAdapter(MainActivity.this,id,name,des,date,risk,description);
         recyclerView.setAdapter(VAdapter);
@@ -63,10 +86,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void GetTripData(){
-        Cursor cursor = dataHelper.readData();
+
+    void GetTripData(String tripSearch){
+        Cursor cursor = dataHelper.readData(tripSearch);
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No data was found", Toast.LENGTH_SHORT).show();
         }else{
             while (cursor.moveToNext()){
                 id.add(cursor.getString(0));
