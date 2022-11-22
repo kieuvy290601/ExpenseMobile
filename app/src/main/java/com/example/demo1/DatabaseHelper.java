@@ -154,6 +154,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     void deleteAllRow(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TRIP_TABLE);
+        db.execSQL("DELETE FROM " + EXPENSE_TABLE);
 
     }
     void deleteExpenseId(String id){

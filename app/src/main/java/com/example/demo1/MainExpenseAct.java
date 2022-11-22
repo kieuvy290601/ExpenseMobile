@@ -38,8 +38,6 @@ public class MainExpenseAct extends AppCompatActivity {
                 String tripId = getIntent().getStringExtra("tripId");
                 intent.putExtra("id", String.valueOf(tripId));
                 startActivity(intent);
-
-
             }
         });
 

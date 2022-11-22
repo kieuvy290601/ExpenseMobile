@@ -9,19 +9,36 @@
 
     <EditText
         android:id="@+id/searchTxt"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="120dp"
+        android:hint="Search Trip ...."
+        android:background="@drawable/search_view"
+        android:text=""
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--<EditText
+        android:id="@+id/searchTxt"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="8dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/search_view"
         android:hint="Search Trip ...."
         app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="398dp"
-        android:layout_height="650dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:paddingStart="10px"
         android:paddingTop="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,8 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="10dp"
         android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchTxt"
         app:layout_constraintTop_toTopOf="parent" />
 

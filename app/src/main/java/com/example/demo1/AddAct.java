@@ -119,7 +119,6 @@ public class AddAct extends AppCompatActivity {
         String radioText = radioSelect.getText().toString();
         String strDesc = add_Desc.getText().toString();
 
-
         displayNextAlert(strName, strDes, strDate, radioText, strDesc);
     };
 

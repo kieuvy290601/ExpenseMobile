@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context=".AddExpense">
 
     <TextView
@@ -13,6 +13,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:text="Type"
+        android:textColor="@color/black"
         android:textSize="56px"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +21,13 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textType"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -37,6 +40,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/blue"
         android:text="Amount"
+        android:textColor="@color/black"
         android:textSize="56px"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,15 +48,17 @@
 
     <EditText
         android:id="@+id/add_Amount"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
         android:hint="Ex: 100,000"
         android:inputType="numberDecimal"
         android:text=""
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAmount" />
 
@@ -63,6 +69,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:text="Time of Expense"
+        android:textColor="@color/black"
         android:textSize="56px"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +77,7 @@
 
     <TextView
         android:id="@+id/add_Time"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
@@ -83,13 +90,15 @@
 
     <Button
         android:id="@+id/addEx_Button"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
         android:text="Add Expense"
         android:textSize="50px"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_Time" />
 
@@ -98,9 +107,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="VND"
-        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:textSize="26dp"
         app:layout_constraintStart_toEndOf="@+id/add_Amount"
         app:layout_constraintTop_toBottomOf="@+id/textAmount" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,27 +45,44 @@ public class UpdateAct extends AppCompatActivity {
         update_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (error()){
+                    Intent intent = new Intent( UpdateAct.this, MainActivity.class);
+                    startActivity(intent);
 
-                Intent intent = new Intent( UpdateAct.this, MainActivity.class);
-                startActivity(intent);
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    radioSelect = findViewById(selectedId);
+                    String radioText = radioSelect.getText().toString();
 
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioSelect = findViewById(selectedId);
-                String radioText = radioSelect.getText().toString();
+                    //And only then we call this
+                    DatabaseHelper myDB = new DatabaseHelper(UpdateAct.this);
+                    name = add_Name.getText().toString().trim();
+                    des = add_Des.getText().toString().trim();
+                    date = add_Date.getText().toString().trim();
+                    risk = radioText;
+                    description = add_Desc.getText().toString().trim();
 
-                //And only then we call this
-                DatabaseHelper myDB = new DatabaseHelper(UpdateAct.this);
-                name = add_Name.getText().toString().trim();
-                des = add_Des.getText().toString().trim();
-                date = add_Date.getText().toString().trim();
-                risk = radioText;
-                description = add_Desc.getText().toString().trim();
-                boolean result =  myDB.updateData(id, name, des,date,risk, description);
-                if(result) {
-                    Toast.makeText(UpdateAct.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(UpdateAct.this, "Failed Update", Toast.LENGTH_SHORT).show();
+                    boolean result =  myDB.updateData(id, name, des,date,risk, description);
+                    if(result) {
+                        Toast.makeText(UpdateAct.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(UpdateAct.this, "Failed Update", Toast.LENGTH_SHORT).show();
+                    }
                 }
+            }
+            private  boolean error() {
+                if (add_Name.getText().toString().length()==0){
+                    Toast.makeText(UpdateAct.this, "Please fill name of the trip", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                if (add_Des.getText().toString().length()==0){
+                    Toast.makeText(UpdateAct.this, "Please fill destination", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                else if (add_Date.getText().toString().length()==0){
+                    Toast.makeText(UpdateAct.this, "Please fill the date", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                return  true;
             }
         });
 
@@ -93,6 +110,7 @@ public class UpdateAct extends AppCompatActivity {
                     Toast.makeText(UpdateAct.this, "Failed Delete", Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
     }

@@ -12,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="Name"
+        android:textColor="@color/black"
         android:textSize="42px"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,14 +22,16 @@
 
     <EditText
         android:id="@+id/update_Name"
-        android:layout_width="377dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
+        android:background="@drawable/layout_border"
         android:ems="10"
         android:hint="Name of Trip"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         android:text=""
         android:textSize="36px"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,23 +46,26 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Destination"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="42px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Name" />
 
     <EditText
         android:id="@+id/update_Des"
-        android:layout_width="376dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
+        android:background="@drawable/layout_border"
         android:ems="10"
         android:hint="Destination"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         android:text=""
-        android:textSize="36px"
+        android:textSize="40px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDes" />
@@ -71,8 +77,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Date"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="42px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Des" />
 
@@ -85,27 +92,28 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:text="Require Risks Assessment"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="42px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Date" />
 
     <RadioGroup
         android:id="@+id/update_radioG"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRisk"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/textRisk">
 
         <RadioButton
             android:id="@+id/yes"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:text="Yes"
-            android:textSize="36px"/>
+            android:textSize="36px" />
         android:onClick="RadioButtonClicked" >
 
         <RadioButton
@@ -113,7 +121,7 @@
             android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:text="No"
-            android:textSize="36px"/>
+            android:textSize="36px" />
     </RadioGroup>
 
     <TextView
@@ -123,21 +131,24 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Description"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="42px"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_radioG" />
 
     <EditText
         android:id="@+id/update_Desc"
-        android:layout_width="379dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="18dp"
+        android:background="@drawable/layout_border"
         android:ems="10"
         android:hint="Write something about your trip"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         android:text=""
         android:textSize="36px"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,32 +158,39 @@
     <Button
         android:id="@+id/update_Button"
         android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#6a994e"
         android:text="Update Data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Desc" />
 
     <Button
         android:id="@+id/delete_Button"
-        android:layout_width="374dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="@color/red1"
         android:text="Delete Data"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_Desc" />
 
     <Button
         android:id="@+id/see_Expense"
         android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:backgroundTint="#6a994e"
         android:text="See Expenses"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/update_Button"
         app:layout_constraintTop_toBottomOf="@+id/update_Desc" />
 
     <TextView
@@ -183,6 +201,7 @@
         android:layout_marginTop="24dp"
         android:onClick="showDate"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDate" />
 
